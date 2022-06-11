@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name:  Mi4A G OPENWRT V1
+name:  X5000R OPENWRT V22
 
 on:
   repository_dispatch:
@@ -21,18 +21,18 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
-  REPO_BRANCH: v21.02.0
-  FEEDS_CONF: devices/xiaomi_mi_4a_gigabit/feeds.conf.default.openwrt
-  CONFIG_FILE: devices/xiaomi_mi_4a_gigabit/mi4agigabit.v1.1.config
+  REPO_BRANCH: v22.03.0-rc4
+  FEEDS_CONF: devices/nanopi_r4s/feeds.conf.default.openwrt.22
+  CONFIG_FILE: devices/nanopi_r4s/r4s.openwrt.v22.config
   DIY_P1_SH: scripts/OpenWRT/hook-feeds.sh
-  DIY_P2_SH: scripts/OpenWRT/lean-openwrt.sh
+  DIY_P2_SH: scripts/OpenWRT/lean-openwrt.v22.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
   TZ: Asia/Singapore
-  FILE_NAME: Mi_4A_Gigabit_OPENWRT_V1
+  FILE_NAME: Totolink_X5000R_V22
 
 jobs:
   build:
@@ -84,24 +84,30 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        #cat config/helmi.config >> openwrt/.config
-        #cat config/htop.config >> openwrt/.config
-        #cat config/ipv6.config >> openwrt/.config
-        #cat config/l2tp.config >> openwrt/.config
-        #cat config/lean.config >> openwrt/.config
-        #cat config/mwan.config >> openwrt/.config
-        #cat config/openclash.config >> openwrt/.config
-        cat config/openvpn-mbedtls.config >> openwrt/.config
-        #cat config/openvpn-wolfssl.config >> openwrt/.config
-        #cat config/openvpn.config >> openwrt/.config
-        #cat config/passwall-lite.config >> openwrt/.config
-        cat config/passwall.config >> openwrt/.config
-        #cat config/ssr-plus-ulti.config >> openwrt/.config
-        #cat config/ssr-plus.config >> openwrt/.config
-        #cat config/stunnel.config >> openwrt/.config
-        #cat config/themes.config >> openwrt/.config
-        cat config/wireguard.config >> openwrt/.config
-        cat config/zram.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/bypass.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/extra.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/htop.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ipv6.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/l2tp.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/language.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/lean.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config//mwan.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config//openclash.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-mbedtls.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-wolfssl.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall-lite-slim.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall-lite.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall-xray.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall2.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-lite.config>> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-plus-ulti.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-plus.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/stunnel.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/themes.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/wireguard.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/zram.config >> openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
