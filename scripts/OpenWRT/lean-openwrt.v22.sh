@@ -79,7 +79,7 @@ popd
 # Add luci-app-ssr-plus
 pushd package
 git clone --depth=1 https://github.com/fw876/helloworld
-[ ! -d helloworld/luci-app-ssr-plus ] && svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-ssr-plus helloworld/luci-app-ssr-plus
+#[ ! -d helloworld/luci-app-ssr-plus ] && svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-ssr-plus helloworld/luci-app-ssr-plus
 popd
 
 # Add luci-app-passwall from kenzok
