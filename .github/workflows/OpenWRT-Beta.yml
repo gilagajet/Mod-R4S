@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name:  X5000R OPENWRT V22
+name:  R4S OpenWRT V22 Beta
 
 on:
   repository_dispatch:
@@ -32,7 +32,7 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
   TZ: Asia/Singapore
-  FILE_NAME: Totolink_X5000R_V22
+  FILE_NAME: R4S_OpenWRT_V22_Beta
 
 jobs:
   build:
