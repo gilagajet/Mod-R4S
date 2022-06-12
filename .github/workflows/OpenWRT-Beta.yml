@@ -91,7 +91,7 @@ jobs:
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/l2tp.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/language.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/lean.config >> openwrt/.config
-        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config//mwan.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config//mwan.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config//openclash.config >> openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-mbedtls.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-wolfssl.config >> openwrt/.config
