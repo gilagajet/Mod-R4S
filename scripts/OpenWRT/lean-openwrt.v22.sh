@@ -85,8 +85,9 @@ popd
 
 # Extra dependency
 pushd package
-git clone --depth=1 https://github.com/kenzok8/openwrt-packages
-git clone --depth=1 https://github.com/kenzok8/small-package
+#git clone --depth=1 https://github.com/kenzok8/openwrt-packages
+#git clone --depth=1 https://github.com/kenzok8/small-package
+git clone --depth=1 https://github.com/kenzok8/small
 popd
 
 # Add OpenClash
