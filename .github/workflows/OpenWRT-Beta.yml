@@ -93,7 +93,7 @@ jobs:
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/lean.config >> openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/mwan.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openclash.config >> openwrt/.config
-        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-mbedtls.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-mbedtls.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn-wolfssl.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/openvpn.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/passwall-lite-slim.config >> openwrt/.config
@@ -104,8 +104,8 @@ jobs:
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-lite.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-plus-ulti.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ssr-plus.config >> openwrt/.config
-        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/stunnel.config >> openwrt/.config
-        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/themes.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/stunnel.config >> openwrt/.config
+        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/themes.config >> openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/wireguard.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/zram.config >> openwrt/.config
         chmod +x $DIY_P2_SH
