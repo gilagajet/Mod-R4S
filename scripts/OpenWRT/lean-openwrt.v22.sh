@@ -33,9 +33,9 @@ echo -e "          Built on "$(date +%Y.%m.%d)"\n ------------------------------
 
 # Version Update
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='GilaGajet build $(TZ=UTC+8 date "+%Y.%m.%d") @ OpenWrt'" >> package/base-files/files/etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='MalasWRT build $(TZ=UTC+8 date "+%Y.%m.%d") @ OpenWrt'" >> package/base-files/files/etc/openwrt_release
 sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
-echo "DISTRIB_REVISION='[V22]'" >> package/base-files/files/etc/openwrt_release
+echo "DISTRIB_REVISION='[Not For Sale]'" >> package/base-files/files/etc/openwrt_release
 
 # Update TimeZone
 sed -i 's/0.openwrt.pool.ntp.org/time.google.com/g' package/base-files/files/bin/config_generate
@@ -87,6 +87,11 @@ sed -i 's/ upx\/host//g' openwrt-passwall/v2ray-plugin/Makefile
 grep -lr upx/host openwrt-passwall/* | xargs -t -I {} sed -i '/upx\/host/d' {}
 popd
 
+# Add luci-app-passwall2
+pushd package
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git
+popd
+
 # Extra dependency
 pushd package
 #git clone --depth=1 https://github.com/kenzok8/openwrt-packages
@@ -103,6 +108,11 @@ popd
 pushd package
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
 git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
+popd
+
+# Add Bypass
+pushd package
+git clone --depth=1 https://github.com/kiddin9/openwrt-bypass.git
 popd
 
 # Add luci-app-wrtbwmon
@@ -132,3 +142,14 @@ popd
 
 #upx
 git clone --depth=1 https://github.com/kuoruan/openwrt-upx.git /workdir/openwrt/staging_dir/host/bin/upx
+
+# Add extra package
+pushd package
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-zerotier
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-vssr
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-usb-printer
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-netspeedtest
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-guest-wifi
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-cloudflarespeedtest
+svn co https://github.com/NueXini/NueXini_Packages/trunk/luci-app-adbyby-plus
+popd
