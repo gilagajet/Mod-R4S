@@ -86,11 +86,11 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/usb.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/bypass.config >> openwrt/.config
-        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/docker.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/docker.config >> openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/vssr.config >> openwrt/.confi
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/extra.config >> openwrt/.config
         curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/htop.config >> openwrt/.config
-        curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ipv6.config >> openwrt/.config
+        #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/ipv6.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/l2tp.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/language.config >> openwrt/.config
         #curl https://raw.githubusercontent.com/gilagajet/plugin/master/config/lean.config >> openwrt/.config
