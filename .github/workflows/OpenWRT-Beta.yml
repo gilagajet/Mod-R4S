@@ -21,7 +21,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
-  REPO_BRANCH: v22.03.0-rc4
+  REPO_BRANCH: v22.03.0-rc5
   FEEDS_CONF: devices/nanopi_r4s/feeds.conf.default.openwrt.22
   CONFIG_FILE: devices/nanopi_r4s/r4s.openwrt.v22.config
   DIY_P1_SH: scripts/OpenWRT/hook-feeds.sh
