@@ -161,11 +161,7 @@ opkg remove $(opkg list-installed | grep zh-cn)
 # Set Custom TTL
 cat << 'EOF' >> /etc/firewall.user
 
-# Set Custom TTL
-iptables -t mangle -I POSTROUTING -o  -j TTL --ttl-set 64
-iptables -t mangle -I PREROUTING -i  -j TTL --ttl-set 64
-ip6tables -t mangle -I POSTROUTING ! -p icmpv6 -o  -j HL --hl-set 64
-ip6tables -t mangle -I PREROUTING ! -p icmpv6 -i  -j HL --hl-set 64
+iptables -t mangle -A POSTROUTING -j TTL --ttl-set 65
 
 EOF
 /etc/config/firewall restart
